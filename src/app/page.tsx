@@ -17,7 +17,7 @@ export default function Home() {
                     className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center mb-8"
                 >
                     <Image
-                        src="/visitenkarte.png" // Passe den Pfad ggf. an
+                        src="/start.jpg" // Passe den Pfad ggf. an
                         alt="Schreinerei Hintergrund"
                         fill
                         style={{ objectFit: 'cover' }}
@@ -25,9 +25,6 @@ export default function Home() {
                         priority
                     />
                     <div className="absolute inset-0 bg-black/40 z-10" />
-                    <h1 className="absolute z-20 w-full text-center text-green-300 text-4xl md:text-5xl font-bold drop-shadow-lg">
-                        Schreinerei Jürgensen & Hillesheim GmbH
-                    </h1>
                 </section>
 
                 <div className="max-w-4xl mx-auto p-6">

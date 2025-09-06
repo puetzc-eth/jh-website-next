@@ -15,7 +15,7 @@ export default function Contact() {
                 <div className="mb-8">
                     <iframe
                         title="Standort"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.504355274091!2d13.404954!3d52.520006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851e3b0b0b0b0%3A0x0!2sMusterstraße%201%2C%2012345%20Musterstadt!5e0!3m2!1sde!2sde!4v1690000000000!5m2!1sde!2sde"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.010692587635!2d6.799211!3d51.230495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c97e7b2e2b1b%3A0x8e2e8e8e8e8e8e8e!2sBayreuther%20Str.%2044%2C%2040527%20D%C3%BCsseldorf!5e0!3m2!1sde!2sde!4v1690000000000!5m2!1sde!2sde"
                         width="100%"
                         height="350"
                         style={{ border: 0 }}
