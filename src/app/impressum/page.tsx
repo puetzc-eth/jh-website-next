@@ -68,15 +68,6 @@ export default function Impressum() {
         <div className="min-h-screen flex flex-col">
             <Header lang={lang} setLang={setLang} />
             <main className="flex-1 max-w-3xl mx-auto p-6 mt-10">
-                {/* Sprachumschalter oben rechts */}
-                <button
-                    className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-gray-900/80 px-4 py-2 rounded shadow text-sm font-semibold"
-                    onClick={() => setLang(lang === "de" ? "en" : "de")}
-                    aria-label="Sprache wechseln"
-                    type="button"
-                >
-                    {t.langSwitch}
-                </button>
                 <h1 className="text-3xl font-bold mb-6">{t.title}</h1>
                 <div className="mb-4">
                     <strong>{t.company}</strong><br />

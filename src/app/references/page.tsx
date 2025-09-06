@@ -27,7 +27,6 @@ const translations = {
     }
 };
 
-// Slideshows für beide Sprachen
 const slideshowsData = {
     de: [
         [
@@ -168,15 +167,6 @@ export default function References() {
                         priority
                     />
                     <div className="absolute inset-0 bg-black/40 z-10" />
-                    {/* Sprachumschalter oben rechts */}
-                    <button
-                        className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-gray-900/80 px-4 py-2 rounded shadow text-sm font-semibold"
-                        onClick={() => setLang(lang === "de" ? "en" : "de")}
-                        aria-label="Sprache wechseln"
-                        type="button"
-                    >
-                        {t.langSwitch}
-                    </button>
                 </section>
                 <div className="max-w-3xl mx-auto p-6">                    
                     <h2 className="text-2xl font-bold mb-4">{t.title}</h2>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from '../components/Header'; 
 import Footer from '../components/Footer'; 
 import Image from "next/image";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 // Übersetzungen für die Kontakt-Seite
 const translations = {
@@ -27,6 +28,38 @@ export default function Contact() {
     const [lang, setLang] = useState<"de" | "en">("de");
     const t = translations[lang];
 
+    // Formular State
+    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [submitted, setSubmitted] = useState(false);
+
+    // Übersetzungen für das Formular
+    const formTexts = {
+        de: {
+            name: "Name",
+            email: "E-Mail",
+            message: "Nachricht",
+            send: "Absenden",
+            success: "Vielen Dank für Ihre Nachricht!",
+        },
+        en: {
+            name: "Name",
+            email: "Email",
+            message: "Message",
+            send: "Send",
+            success: "Thank you for your message!",
+        }
+    }[lang];
+
+    function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
+
+    function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        setSubmitted(true);
+        setForm({ name: "", email: "", message: "" });
+    }
+
     return (
         <div className="min-h-screen flex flex-col">
             <Header lang={lang} setLang={setLang} />
@@ -46,35 +79,108 @@ export default function Contact() {
                         priority
                     />
                     <div className="absolute inset-0 bg-black/40 z-10" />
-                    {/* Sprachumschalter oben rechts */}
-                    <button
-                        className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-gray-900/80 px-4 py-2 rounded shadow text-sm font-semibold"
-                        onClick={() => setLang(lang === "de" ? "en" : "de")}
-                        aria-label="Sprache wechseln"
-                        type="button"
-                    >
-                        {t.langSwitch}
-                    </button>
                 </section>
-                <div className="max-w-3xl mx-auto p-6">
+                <div className="max-w-4xl mx-auto p-6">
                     <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
-                    <p className="mb-4 text-justify">
+                    <p className="mb-8 text-justify">
                         {t.text}
                     </p>
-                    <div className="mb-8">
-                        <iframe
-                            title={t.mapTitle}
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.010692587635!2d6.799211!3d51.230495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c97e7b2e2b1b%3A0x8e2e8e8e8e8e8e8e!2sBayreuther%20Str.%2044%2C%2040527%20D%C3%BCsseldorf!5e0!3m2!1sde!2sde!4v1690000000000!5m2!1sde!2sde"
-                            width="100%"
-                            height="350"
-                            style={{ border: 0 }}
-                            allowFullScreen={true}
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className="rounded-lg shadow"
-                        ></iframe>
-                    </div>                    
-                    {/* Weitere Kontaktinformationen oder ein Kontaktformular hier einfügen */}
+                    {/* Kontaktinfos mit Icons nebeneinander */}
+                    <div className="flex flex-col md:flex-row gap-6 mb-8 items-stretch justify-between">
+                        <div className="flex-1 flex items-center gap-3 rounded-lg shadow p-4">
+                            <FaPhoneAlt className="text-green-700 text-xl shrink-0" />
+                            <div>
+                                <div className="font-semibold">+49 211 555905</div>
+                                <div className="text-xs">Telefon</div>
+                            </div>
+                        </div>
+                        <div className="flex-1 flex items-center gap-3 rounded-lg shadow p-4">
+                            <FaEnvelope className="text-green-700 text-xl shrink-0" />
+                            <div>
+                                <a
+                                    href="mailto:juergensen_hillesheim@t-online.de"
+                                    className="font-semibold hover:underline text-xs break-all"
+                                >
+                                    juergensen_hillesheim@t-online.de
+                                </a>
+                                <div className="text-xs">E-Mail</div>
+                            </div>
+                        </div>
+                        <div className="flex-1 flex items-center gap-3 rounded-lg shadow p-4">
+                            <FaMapMarkerAlt className="text-green-700 text-xl shrink-0" />
+                            <div>
+                                <div className="font-semibold">Bayreuther Straße 44</div>
+                                <div className="text-xs">40597 Düsseldorf</div>
+                                <div className="text-xs">Deutschland</div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Kontaktformular und Karte nebeneinander */}
+                    <div className="flex flex-col md:flex-row gap-8 mb-8">
+                        <form
+                            className="rounded-lg shadow p-6 flex flex-col gap-4 flex-1 min-w-0"
+                            onSubmit={handleSubmit}
+                        >
+                            <label className="font-semibold">
+                                {formTexts.name}
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    required
+                                    className="block w-full mt-1 p-2 rounded border "
+                                />
+                            </label>
+                            <label className="font-semibold">
+                                {formTexts.email}
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="block w-full mt-1 p-2 rounded border "
+                                />
+                            </label>
+                            <label className="font-semibold">
+                                {formTexts.message}
+                                <textarea
+                                    name="message"
+                                    value={form.message}
+                                    onChange={handleChange}
+                                    required
+                                    rows={5}
+                                    className="block w-full mt-1 p-2 rounded border "
+                                />
+                            </label>
+                            <button
+                                type="submit"
+                                className="mt-2 px-6 py-2 bg-green-700 hover:bg-green-800 text-white font-semibold rounded shadow"
+                                disabled={submitted}
+                            >
+                                {formTexts.send}
+                            </button>
+                            {submitted && (
+                                <div className="text-green-700 font-semibold mt-2">
+                                    {formTexts.success}
+                                </div>
+                            )}
+                        </form>
+                        <div className="flex-1 min-w-0 flex">
+                            <iframe
+                                title={t.mapTitle}
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.010692587635!2d6.799211!3d51.230495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c97e7b2e2b1b%3A0x8e2e8e8e8e8e8e8e!2sBayreuther%20Str.%2044%2C%2040527%20D%C3%BCsseldorf!5e0!3m2!1sde!2sde!4v1690000000000!5m2!1sde!2sde"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="rounded-lg shadow w-full h-full min-h-[350px]"
+                            ></iframe>
+                        </div>
+                    </div>
                 </div>
             </main>
             <Footer lang={lang} />
