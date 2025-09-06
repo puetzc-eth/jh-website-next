@@ -2,10 +2,60 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { FaHome, FaInfoCircle, FaAddressBook, FaRegImages, FaMoon, FaSun } from "react-icons/fa";
+import { FaHome, FaAddressBook, FaRegImages, FaMoon, FaSun } from "react-icons/fa";
+import { HiUserGroup } from "react-icons/hi2";
 import Image from "next/image";
 
-// Theme Toggle Button
+// Übersetzungen für die Navbar
+const navTranslations = {
+    de: {
+        start: "Start",
+        about: "Über Uns",
+        references: "Expertise",
+        contact: "Kontakt",
+        langSwitch: "English",
+    },
+    en: {
+        start: "Home",
+        about: "About",
+        references: "Expertise",
+        contact: "Contact",
+        langSwitch: "Deutsch",
+    }
+};
+
+// Sprachumschalter als Switch (ohne Beschriftung an der Seite, Schrift immer dunkel)
+function LanguageSwitch({
+    lang,
+    setLang,
+    open,
+}: {
+    lang: "de" | "en";
+    setLang: (l: "de" | "en") => void;
+    open: boolean;
+}) {
+    const isEnglish = lang === "en";
+    return (
+        <div className="flex items-center justify-center w-full px-4 py-2 mt-4 mb-2">
+            <button
+                onClick={() => setLang(isEnglish ? "de" : "en")}
+                aria-label="Sprache wechseln"
+                type="button"
+                className="relative w-12 h-6 rounded-full transition-colors duration-300 bg-gray-300 focus:outline-none"
+            >
+                <span
+                    className={`absolute top-0 left-0 w-6 h-6 rounded-full bg-white border border-gray-400 shadow transition-transform duration-300 flex items-center justify-center ${
+                        isEnglish ? "translate-x-6" : "translate-x-0"
+                    }`}
+                >
+                    <span className="text-xs font-bold text-black">{isEnglish ? "EN" : "DE"}</span>
+                </span>
+            </button>
+        </div>
+    );
+}
+
+// Theme Toggle Button als Switch
 function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
     const [dark, setDark] = useState(false);
@@ -39,18 +89,37 @@ function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="flex items-center gap-2 px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors mt-8 mb-2"
             aria-label="Theme wechseln"
             type="button"
+            className="flex items-center justify-center px-4 py-2 mt-2 mb-2 w-full"
         >
-            {dark ? <FaSun /> : <FaMoon />}
-            {dark ? "Lightmode" : "Darkmode"}
+            <span className="relative flex items-center">
+                <span
+                    className={`block w-12 h-6 rounded-full transition-colors duration-300 ${
+                        dark ? "bg-gray-700" : "bg-gray-300"
+                    }`}
+                ></span>
+                <span
+                    className={`absolute left-0 top-0 w-6 h-6 rounded-full bg-white border border-gray-400 shadow transition-transform duration-300 flex items-center justify-center ${
+                        dark ? "translate-x-6" : "translate-x-0"
+                    }`}
+                >
+                    {dark ? <FaMoon className="text-gray-700" /> : <FaSun className="text-yellow-400" />}
+                </span>
+            </span>
         </button>
     );
 }
 
-export default function Header() {
+export default function Header({
+    lang = "de",
+    setLang,
+}: {
+    lang?: "de" | "en";
+    setLang?: (l: "de" | "en") => void;
+}) {
     const [open, setOpen] = useState(false);
+    const t = navTranslations[lang];
 
     return (
         <aside
@@ -96,14 +165,14 @@ export default function Header() {
                                 : "opacity-0 -translate-x-6 pointer-events-none"
                         }`}
                     >
-                        Start
+                        {t.start}
                     </span>
                 </Link>
                 <Link
                     href="/about"
                     className="flex flex-col items-center text-black font-medium group transition-transform duration-300 hover:scale-110"
                 >
-                    <FaInfoCircle className="text-3xl mb-2 transition-transform duration-300 group-hover:scale-125" />
+                    <HiUserGroup className="text-3xl mb-2 transition-transform duration-300 group-hover:scale-125" />
                     <span
                         className={`transition-all duration-300 ${
                             open
@@ -111,7 +180,7 @@ export default function Header() {
                                 : "opacity-0 -translate-x-6 pointer-events-none"
                         }`}
                     >
-                        Über Uns
+                        {t.about}
                     </span>
                 </Link>
                 <Link
@@ -126,7 +195,7 @@ export default function Header() {
                                 : "opacity-0 -translate-x-6 pointer-events-none"
                         }`}
                     >
-                        Referenzen
+                        {t.references}
                     </span>
                 </Link>
                 <Link
@@ -141,11 +210,12 @@ export default function Header() {
                                 : "opacity-0 -translate-x-6 pointer-events-none"
                         }`}
                     >
-                        Kontakt
+                        {t.contact}
                     </span>
                 </Link>
             </nav>
-            <div className="flex flex-col items-center mt-auto mb-4">
+            <div className="flex flex-col items-center w-full mb-2 gap-1">
+                {setLang && <LanguageSwitch lang={lang} setLang={setLang} open={open} />}
                 <ThemeToggle />
             </div>
         </aside>

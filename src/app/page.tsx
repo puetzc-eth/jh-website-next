@@ -6,10 +6,27 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import styles from './page.module.css';
 
+// Übersetzungen für die Startseite
+const translations = {
+    de: {
+        title: "Schreinerei Jürgensen & Hillesheim GmbH",
+        welcome: "Willkommen bei der Schreinerei Jürgensen & Hillesheim GmbH – Ihrem Partner für individuelle Holzarbeiten, Möbel nach Maß und hochwertige Innenausbauten. Entdecken Sie unsere Leidenschaft für das Schreinerhandwerk!",
+        langSwitch: "English",
+    },
+    en: {
+        title: "Jürgensen & Hillesheim Carpentry Ltd.",
+        welcome: "Welcome to Jürgensen & Hillesheim Carpentry Ltd. – your partner for custom woodwork, bespoke furniture, and high-quality interior fittings. Discover our passion for craftsmanship!",
+        langSwitch: "Deutsch",
+    }
+};
+
 export default function Home() {
+    const [lang, setLang] = useState<"de" | "en">("de");
+    const t = translations[lang];
+
     return(
         <div className="min-h-screen flex flex-col">
-            <Header />
+            <Header lang={lang} setLang={setLang} />
 
             <main className="flex-1">
                 <section
@@ -17,8 +34,8 @@ export default function Home() {
                     className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center mb-8"
                 >
                     <Image
-                        src="/start.jpg" // Passe den Pfad ggf. an
-                        alt="Schreinerei Hintergrund"
+                        src="/start2.jpg"
+                        alt={lang === "de" ? "Schreinerei Hintergrund" : "Carpentry background"}
                         fill
                         style={{ objectFit: 'cover' }}
                         className="z-0"
@@ -29,18 +46,18 @@ export default function Home() {
 
                 <div className="max-w-4xl mx-auto p-6">
                     <section id="start" className="mb-8">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 -ml-6">
-                            Schreinerei Jürgensen & Hillesheim GmbH
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 ">
+                            {t.title}
                         </h2>
                         <p className="mb-4 text-justify">
-                            Willkommen bei der Schreinerei Jürgensen & Hillesheim GmbH – Ihrem Partner für individuelle Holzarbeiten, Möbel nach Maß und hochwertige Innenausbauten. Entdecken Sie unsere Leidenschaft für das Schreinerhandwerk!
+                            {t.welcome}
                         </p>
                     </section>
                 </div>
             </main>
 
             <div className="w-full">
-                <Footer />
+                <Footer lang={lang} />
             </div>
         </div>
     );
