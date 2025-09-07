@@ -6,40 +6,6 @@ import Footer from '../components/Footer';
 import Image from "next/image";
 import aboutContent from './content.json' assert { type: "json" };
 
-// Hilfs-Hook für Intersection Observer
-function useInView<T extends HTMLElement = HTMLElement>(threshold = 0.15) {
-    const ref = useRef<T | null>(null);
-    const [inView, setInView] = useState(false);
-
-    useEffect(() => {
-        if (!ref.current) return;
-        const observer = new window.IntersectionObserver(
-            ([entry]) => setInView(entry.isIntersecting),
-            { threshold }
-        );
-        observer.observe(ref.current);
-        return () => observer.disconnect();
-    }, []);
-    return [ref, inView] as const;
-}
-
-// Hook für animierte Linien neben Überschriften
-function useLineInView<T extends HTMLElement = HTMLElement>(threshold = 0.15) {
-    const ref = useRef<T | null>(null);
-    const [visible, setVisible] = useState(false);
-
-    useEffect(() => {
-        if (!ref.current) return;
-        const observer = new window.IntersectionObserver(
-            ([entry]) => setVisible(entry.isIntersecting),
-            { threshold }
-        );
-        observer.observe(ref.current);
-        return () => observer.disconnect();
-    }, []);
-    return [ref, visible] as const;
-}
-
 export default function About() {
     const [lang, setLang] = useState<"de" | "en">("de");
     const t = aboutContent[lang];
@@ -51,7 +17,7 @@ export default function About() {
     const [partnersLineRef, partnersLineVisible] = useLineInView<HTMLDivElement>();
 
     // Haupt-Slideshow
-    const slideshowImages = t.slideshow;
+    const slideshowImages: Array<{ src: string; alt: string; desc?: string }> = t.slideshow;
     const [slide, setSlide] = useState(0);
 
     // Touch/Swipe für Slideshow
@@ -59,7 +25,12 @@ export default function About() {
     function handleTouchStart(e: React.TouchEvent) {
         touchStartX.current = e.touches[0].clientX;
     }
-    function handleTouchEnd(e: React.TouchEvent, setFn: (n: number) => void, images: any[], idx: number) {
+    function handleTouchEnd(
+        e: React.TouchEvent,
+        setFn: (n: number) => void,
+        images: Array<{ src: string; alt: string; desc?: string }>,
+        idx: number
+    ) {
         if (touchStartX.current === null) return;
         const deltaX = e.changedTouches[0].clientX - touchStartX.current;
         if (deltaX > 50) {
@@ -69,6 +40,58 @@ export default function About() {
         }
         touchStartX.current = null;
     }
+
+    const imageRefs = useRef<(HTMLButtonElement | null)[]>([]);
+    const [imagesInView, setImagesInView] = useState<boolean[]>(() => t.images.map(() => false));
+
+    useEffect(() => {
+        const observers: IntersectionObserver[] = [];
+        imageRefs.current.forEach((el, idx) => {
+            if (!el) return;
+            const observer = new window.IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setImagesInView(prev => {
+                            const next = [...prev];
+                            next[idx] = true;
+                            return next;
+                        });
+                        observer.disconnect();
+                    }
+                },
+                { threshold: 0.15 }
+            );
+            observer.observe(el);
+            observers.push(observer);
+        });
+        return () => observers.forEach(o => o.disconnect());
+    }, [t.images.length]);
+
+    const partnerRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [partnersInView, setPartnersInView] = useState<boolean[]>(() => t.partners.map(() => false));
+
+    useEffect(() => {
+        const observers: IntersectionObserver[] = [];
+        partnerRefs.current.forEach((el, idx) => {
+            if (!el) return;
+            const observer = new window.IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setPartnersInView(prev => {
+                            const next = [...prev];
+                            next[idx] = true;
+                            return next;
+                        });
+                        observer.disconnect();
+                    }
+                },
+                { threshold: 0.15 }
+            );
+            observer.observe(el);
+            observers.push(observer);
+        });
+        return () => observers.forEach(o => o.disconnect());
+    }, [t.partners.length]);
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -184,35 +207,35 @@ export default function About() {
                             {t.galleryIntro}
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            {t.images.map((img, idx) => {
-                                const [ref, inView] = useInView<HTMLButtonElement>(0.15);
-                                return (
-                                    <button
-                                        key={idx}
-                                        ref={ref}
-                                        type="button"
-                                        className={`flex flex-col items-center group focus:outline-none transition-all duration-700
-                                            ${idx === 6 ? "md:col-start-2" : ""}
-                                            ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
-                                        `}
-                                        style={{ transitionDelay: `${idx * 80}ms` }}
-                                        onClick={() => setModalIdx(idx)}
-                                        aria-label={img.title}
-                                    >
-                                        <div className="w-full aspect-[4/3] relative rounded-lg overflow-hidden shadow group-hover:scale-105 transition-transform">
-                                            <Image
-                                                src={img.src}
-                                                alt={img.title}
-                                                fill
-                                                style={{ objectFit: "cover" }}
-                                            />
-                                        </div>
-                                        <span className="mt-2 text-center font-medium">
-                                            {img.title}
-                                        </span>
-                                    </button>
-                                );
-                            })}
+                            {t.images.map((img, idx) => (
+                                <button
+                                    key={idx}
+                                    ref={el => {
+                                        // TypeScript-Fix: Nur setzen, wenn el nicht null ist
+                                        if (el) imageRefs.current[idx] = el;
+                                    }}
+                                    type="button"
+                                    className={`flex flex-col items-center group focus:outline-none transition-all duration-700
+                                        ${idx === 6 ? "md:col-start-2" : ""}
+                                        ${imagesInView[idx] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
+                                    `}
+                                    style={{ transitionDelay: `${idx * 80}ms` }}
+                                    onClick={() => setModalIdx(idx)}
+                                    aria-label={img.title}
+                                >
+                                    <div className="w-full aspect-[4/3] relative rounded-lg overflow-hidden shadow group-hover:scale-105 transition-transform">
+                                        <Image
+                                            src={img.src}
+                                            alt={img.title}
+                                            fill
+                                            style={{ objectFit: "cover" }}
+                                        />
+                                    </div>
+                                    <span className="mt-2 text-center font-medium">
+                                        {img.title}
+                                    </span>
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -303,44 +326,78 @@ export default function About() {
                         {t.partnersText}
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
-                        {t.partners.map((partner, idx) => {
-                            const [ref, inView] = useInView<HTMLDivElement>(0.15);
-                            return (
-                                <div
-                                    className={`flex flex-col items-center group transition-all duration-700
-                                        ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
-                                    `}
-                                    ref={ref}
-                                    key={idx}
-                                    style={{ transitionDelay: `${idx * 80}ms` }}
+                        {t.partners.map((partner, idx) => (
+                            <div
+                                key={idx}
+                                ref={el => {
+                                    // TypeScript-Fix: Nur setzen, wenn el nicht null ist
+                                    if (el) partnerRefs.current[idx] = el;
+                                }}
+                                className={`flex flex-col items-center group transition-all duration-700
+                                    ${partnersInView[idx] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
+                                `}
+                                style={{ transitionDelay: `${idx * 80}ms` }}
+                            >
+                                <a
+                                    href={partner.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full h-40 block relative"
+                                    tabIndex={0}
                                 >
-                                    <a
-                                        href={partner.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full h-40 block relative"
-                                        tabIndex={0}
-                                    >
-                                        <Image
-                                            src={partner.src}
-                                            alt={partner.alt}
-                                            fill
-                                            className="object-contain"
-                                            style={{ objectFit: "contain" }}
-                                            sizes="(max-width: 640px) 100vw, 33vw"
-                                        />
-                                        <span className="absolute inset-0 flex items-center justify-center text-white text-lg font-medium bg-black/60 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 rounded-lg">
-                                            {partner.name}
-                                        </span>
-                                    </a>
-                                </div>
-                            );
-                        })}
+                                    <Image
+                                        src={partner.src}
+                                        alt={partner.alt}
+                                        fill
+                                        className="object-contain"
+                                        style={{ objectFit: "contain" }}
+                                        sizes="(max-width: 640px) 100vw, 33vw"
+                                    />
+                                    <span className="absolute inset-0 flex items-center justify-center text-white text-lg font-medium bg-black/60 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 rounded-lg">
+                                        {partner.name}
+                                    </span>
+                                </a>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
             <Footer lang={lang} />
         </div>
     );
+}
+
+// Hilfs-Hook für Intersection Observer
+function useInView<T extends HTMLElement = HTMLElement>(threshold = 0.15) {
+    const ref = useRef<T | null>(null);
+    const [inView, setInView] = useState(false);
+
+    useEffect(() => {
+        if (!ref.current) return;
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setInView(entry.isIntersecting),
+            { threshold }
+        );
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
+    return [ref, inView] as const;
+}
+
+// Hook für animierte Linien neben Überschriften
+function useLineInView<T extends HTMLElement = HTMLElement>(threshold = 0.15) {
+    const ref = useRef<T | null>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        if (!ref.current) return;
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setVisible(entry.isIntersecting),
+            { threshold }
+        );
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
+    return [ref, visible] as const;
 }
 

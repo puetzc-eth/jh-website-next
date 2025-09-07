@@ -58,7 +58,35 @@ export default function References() {
     }, [modalIdx]);
 
     // Galerie-Übersicht (erstes Bild jeder Slideshow)
-    const gallery = slideshows.map((group: any[]) => group[0]);
+    type Slide = { src: string; text: string; desc: string };
+    const gallery: Slide[] = slideshows.map((group: Slide[]) => group[0]);
+
+    // Refs und Sichtbarkeits-Array für Animation
+    const galleryRefs = useRef<(HTMLButtonElement | null)[]>([]);
+    const [galleryInView, setGalleryInView] = useState<boolean[]>(() => gallery.map(() => false));
+
+    useEffect(() => {
+        const observers: IntersectionObserver[] = [];
+        galleryRefs.current.forEach((el, idx) => {
+            if (!el) return;
+            const observer = new window.IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setGalleryInView(prev => {
+                            const next = [...prev];
+                            next[idx] = true;
+                            return next;
+                        });
+                        observer.disconnect();
+                    }
+                },
+                { threshold: 0.15 }
+            );
+            observer.observe(el);
+            observers.push(observer);
+        });
+        return () => observers.forEach(o => o.disconnect());
+    }, [gallery.length]);
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -96,36 +124,33 @@ export default function References() {
                 </div>
                 {/* Galerie mit Einfliegen */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto px-4 pb-12">
-                    {gallery.map((item: any, idx: number) => {
-                        const [ref, inView] = useInView<HTMLButtonElement>(0.15);
-                        return (
-                            <button
-                                key={idx}
-                                ref={ref}
-                                className={`relative group aspect-square overflow-hidden focus:outline-none
-                                    transition-all duration-700
-                                    ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
-                                `}
-                                style={{ transitionDelay: `${idx * 80}ms` }}
-                                onClick={() => setModalIdx(idx)}
-                                aria-label={item.text}
-                                type="button"
-                            >
-                                <Image
-                                    src={item.src}
-                                    alt={item.text}
-                                    fill
-                                    style={{ objectFit: "cover" }}
-                                    className="transition-transform duration-300 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    priority={idx === 0}
-                                />
-                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span className="text-white text-lg font-semibold text-center px-4">{item.text}</span>
-                                </div>
-                            </button>
-                        );
-                    })}
+                    {gallery.map((item, idx) => (
+                        <button
+                            key={idx}
+                            ref={el => { galleryRefs.current[idx] = el; }}
+                            className={`relative group aspect-square overflow-hidden focus:outline-none
+                                transition-all duration-700
+                                ${galleryInView[idx] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
+                            `}
+                            style={{ transitionDelay: `${idx * 80}ms` }}
+                            onClick={() => setModalIdx(idx)}
+                            aria-label={item.text}
+                            type="button"
+                        >
+                            <Image
+                                src={item.src}
+                                alt={item.text}
+                                fill
+                                style={{ objectFit: "cover" }}
+                                className="transition-transform duration-300 group-hover:scale-105"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority={idx === 0}
+                            />
+                            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span className="text-white text-lg font-semibold text-center px-4">{item.text}</span>
+                            </div>
+                        </button>
+                    ))}
                 </div>
                 {/* Modal für Slideshow */}
                 {modalIdx !== null && (
