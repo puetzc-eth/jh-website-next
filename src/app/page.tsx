@@ -39,6 +39,12 @@ export default function Home() {
                         <p className="mb-4 text-justify">
                             {t.welcome}
                         </p>
+                        <p className="mb-4 text-justify">
+                            {t.intro1}
+                        </p>
+                        <p className="mb-4 text-justify">
+                            {t.intro2}
+                        </p>
                     </section>
                 </div>
             </main>

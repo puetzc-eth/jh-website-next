@@ -4,7 +4,9 @@
       "title": "Schreinerei Jürgensen & Hillesheim GmbH",
       "welcome": "Willkommen bei der Schreinerei Jürgensen & Hillesheim GmbH – Ihrem Partner für individuelle Holzarbeiten, Möbel nach Maß und hochwertige Innenausbauten. Entdecken Sie unsere Leidenschaft für das Schreinerhandwerk!",
       "langSwitch": "English",
-      "heroAlt": "Schreinerei Hintergrund"
+      "heroAlt": "Schreinerei Hintergrund",
+      "intro1": "Als Schreinermeisterbetrieb in Düsseldorf gestalten wir Wohn- und Arbeitsräume mit Funktion, Qualität und Stil. Unser Leistungsspektrum umfasst Treppen, Türen, Fenster, individuelle Möbel, Bodenbeläge sowie Messebau, alles fachgerecht, präzise und mit modernsten Maschinen umgesetzt.",
+      "intro2": "Von der Planung bis zur Umsetzung begleiten wir Sie persönlich und übernehmen auch Reparaturen und Restaurierungen. Durch die Zusammenarbeit mit regionalen Partnern und den Einsatz nachhaltiger Materialien schaffen wir Lösungen, die langlebig, funktional und individuell sind."
     }
   },
   "en": {
@@ -12,7 +14,9 @@
       "title": "Jürgensen & Hillesheim Carpentry Ltd.",
       "welcome": "Welcome to Jürgensen & Hillesheim Carpentry Ltd. – your partner for custom woodwork, bespoke furniture, and high-quality interior fittings. Discover our passion for craftsmanship!",
       "langSwitch": "Deutsch",
-      "heroAlt": "Carpentry background"
+      "heroAlt": "Carpentry background",
+      "intro1": "As a master carpentry company based in Düsseldorf, we design living and working spaces with function, quality, and style. Our range of services includes stairs, doors, windows, custom furniture, flooring, and exhibition stand construction – all implemented professionally, precisely, and with state-of-the-art machinery.",
+      "intro2": "From planning to completion, we support you personally and also take care of repairs and restorations. By working with regional partners and using sustainable materials, we create solutions that are durable, functional, and unique."
     }
   }
 }
