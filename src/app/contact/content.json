@@ -1,0 +1,42 @@
+{
+  "de": {
+    "heroAlt": "Schreinerei Hintergrund",
+    "title": "Kontakt",
+    "text": "Seit über 30 Jahren stehen wir für Qualität, Zuverlässigkeit und kreative Lösungen im Schreinerhandwerk. Unser erfahrenes Team verbindet traditionelles Handwerk mit modernen Techniken, um Ihre Wünsche zu verwirklichen.",
+    "langSwitch": "English",
+    "mapTitle": "Standort",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "send": "Absenden",
+      "success": "Vielen Dank für Ihre Nachricht!",
+      "phone": "Telefon",
+      "mail": "E-Mail",
+      "address": "Adresse",
+      "street": "Bayreuther Straße 44",
+      "city": "40597 Düsseldorf",
+      "country": "Deutschland"
+    }
+  },
+  "en": {
+    "heroAlt": "Carpentry background",
+    "title": "Contact",
+    "text": "For over 30 years, we have stood for quality, reliability, and creative solutions in carpentry. Our experienced team combines traditional craftsmanship with modern techniques to realize your wishes.",
+    "langSwitch": "Deutsch",
+    "mapTitle": "Location",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "success": "Thank you for your message!",
+      "phone": "Phone",
+      "mail": "Email",
+      "address": "Address",
+      "street": "Bayreuther Straße 44",
+      "city": "40597 Düsseldorf",
+      "country": "Germany"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "de": {
+    "heroAlt": "Schreinerei Hintergrund",
+    "title": "Über Uns",
+    "text": "Wir sind ein erfahrenes Team aus Schreinermeistern und Gesellen, das seit Jahrzehnten für Qualität, Zuverlässigkeit und kreative Lösungen steht. Unser Anspruch ist es, Ihre Wünsche mit handwerklicher Präzision und moderner Technik zu verwirklichen.",
+    "langSwitch": "English",
+    "galleryTitle": "Unser Team",
+    "galleryIntro": "Lernen Sie unser engagiertes Team kennen, das mit Leidenschaft und Fachwissen Ihre Projekte realisiert. Jeder Einzelne bringt seine Erfahrung und Kreativität ein, um beste Ergebnisse zu erzielen.",
+    "slideshow": [
+      {
+        "src": "/about1.jpg",
+        "alt": "Innenausbau",
+        "desc": "Maßgefertigte Lösungen für Wohn- und Arbeitsräume."
+      },
+      {
+        "src": "/about2.jpg",
+        "alt": "Möbeldesign",
+        "desc": "Individuelle Möbelstücke nach Ihren Vorstellungen."
+      },
+      {
+        "src": "/about3.jpg",
+        "alt": "Küchenbau",
+        "desc": "Moderne und funktionale Küchen aus Meisterhand."
+      }
+    ],
+    "images": [
+      {
+        "src": "/about1.jpg",
+        "title": "Martin Pütz",
+        "desc": "Maßgefertigte Lösungen für Wohn- und Arbeitsräume."
+      },
+      {
+        "src": "/about2.jpg",
+        "title": "Tobias Hillesheim",
+        "desc": "Individuelle Möbelstücke nach Ihren Vorstellungen."
+      },
+      {
+        "src": "/about3.jpg",
+        "title": "Klaus Hillesheim",
+        "desc": "Moderne und funktionale Küchen aus Meisterhand."
+      },
+      {
+        "src": "/about4.jpg",
+        "title": "Joachim Aigner",
+        "desc": "Stilvolle und sichere Treppen für Ihr Zuhause."
+      },
+      {
+        "src": "/about5.jpg",
+        "title": "Josef Pütz",
+        "desc": "Hochwertige Türen und Fenster aus eigener Fertigung."
+      },
+      {
+        "src": "/about6.jpg",
+        "title": "Emil Steller",
+        "desc": "Elegante Badmöbel für Ihr Wohlfühlbad."
+      },
+      {
+        "src": "/about7.jpg",
+        "title": "Jakob Hölzel",
+        "desc": "Langlebige und schöne Holzfußböden."
+      }
+    ],
+    "close": "Schließen"
+  },
+  "en": {
+    "heroAlt": "Carpentry background",
+    "title": "About Us",
+    "text": "We are an experienced team of master carpenters and journeymen, standing for quality, reliability, and creative solutions for decades. Our aim is to realize your wishes with craftsmanship precision and modern technology.",
+    "langSwitch": "Deutsch",
+    "galleryTitle": "Insights into our Work",
+    "galleryIntro": "Get to know our dedicated team, who realize your projects with passion and expertise. Each member contributes their experience and creativity to achieve the best results.",
+    "slideshow": [
+      {
+        "src": "/about1.jpg",
+        "alt": "Interior Construction",
+        "desc": "Custom solutions for living and working spaces."
+      },
+      {
+        "src": "/about2.jpg",
+        "alt": "Furniture Design",
+        "desc": "Individual pieces of furniture made to your wishes."
+      },
+      {
+        "src": "/about3.jpg",
+        "alt": "Kitchen Construction",
+        "desc": "Modern and functional kitchens from master craftsmen."
+      }
+    ],
+    "images": [
+      {
+        "src": "/about1.jpg",
+        "title": "Interior Construction",
+        "desc": "Custom solutions for living and working spaces."
+      },
+      {
+        "src": "/about2.jpg",
+        "title": "Furniture Design",
+        "desc": "Individual pieces of furniture made to your wishes."
+      },
+      {
+        "src": "/about3.jpg",
+        "title": "Kitchen Construction",
+        "desc": "Modern and functional kitchens from master craftsmen."
+      },
+      {
+        "src": "/about4.jpg",
+        "title": "Staircase Construction",
+        "desc": "Stylish and safe staircases for your home."
+      },
+      {
+        "src": "/about5.jpg",
+        "title": "Doors & Windows",
+        "desc": "High-quality doors and windows from our own production."
+      },
+      {
+        "src": "/about6.jpg",
+        "title": "Bathroom Furniture",
+        "desc": "Elegant bathroom furniture for your dream bathroom."
+      },
+      {
+        "src": "/about7.jpg",
+        "title": "Flooring",
+        "desc": "Durable and beautiful wooden floors."
+      }
+    ],
+    "close": "Close"
+  }
+}

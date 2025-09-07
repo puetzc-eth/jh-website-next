@@ -5,50 +5,16 @@ import Header from '../components/Header';
 import Footer from '../components/Footer'; 
 import Image from "next/image";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-
-// Übersetzungen für die Kontakt-Seite
-const translations = {
-    de: {
-        heroAlt: "Schreinerei Hintergrund",
-        title: "Kontakt",
-        text: "Seit über 30 Jahren stehen wir für Qualität, Zuverlässigkeit und kreative Lösungen im Schreinerhandwerk. Unser erfahrenes Team verbindet traditionelles Handwerk mit modernen Techniken, um Ihre Wünsche zu verwirklichen.",
-        langSwitch: "English",
-        mapTitle: "Standort",
-    },
-    en: {
-        heroAlt: "Carpentry background",
-        title: "Contact",
-        text: "For over 30 years, we have stood for quality, reliability, and creative solutions in carpentry. Our experienced team combines traditional craftsmanship with modern techniques to realize your wishes.",
-        langSwitch: "Deutsch",
-        mapTitle: "Location",
-    }
-};
+import content from './content.json' assert { type: "json" };
 
 export default function Contact() {
     const [lang, setLang] = useState<"de" | "en">("de");
-    const t = translations[lang];
+    const t = content[lang];
+    const formTexts = t.form;
 
     // Formular State
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const [submitted, setSubmitted] = useState(false);
-
-    // Übersetzungen für das Formular
-    const formTexts = {
-        de: {
-            name: "Name",
-            email: "E-Mail",
-            message: "Nachricht",
-            send: "Absenden",
-            success: "Vielen Dank für Ihre Nachricht!",
-        },
-        en: {
-            name: "Name",
-            email: "Email",
-            message: "Message",
-            send: "Send",
-            success: "Thank you for your message!",
-        }
-    }[lang];
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -91,7 +57,7 @@ export default function Contact() {
                             <FaPhoneAlt className="text-green-700 text-xl shrink-0" />
                             <div>
                                 <div className="font-semibold">+49 211 555905</div>
-                                <div className="text-xs">Telefon</div>
+                                <div className="text-xs">{formTexts.phone}</div>
                             </div>
                         </div>
                         <div className="flex-1 flex items-center gap-3 rounded-lg shadow p-4">
@@ -103,15 +69,15 @@ export default function Contact() {
                                 >
                                     juergensen_hillesheim@t-online.de
                                 </a>
-                                <div className="text-xs">E-Mail</div>
+                                <div className="text-xs">{formTexts.mail}</div>
                             </div>
                         </div>
                         <div className="flex-1 flex items-center gap-3 rounded-lg shadow p-4">
                             <FaMapMarkerAlt className="text-green-700 text-xl shrink-0" />
                             <div>
-                                <div className="font-semibold">Bayreuther Straße 44</div>
-                                <div className="text-xs">40597 Düsseldorf</div>
-                                <div className="text-xs">Deutschland</div>
+                                <div className="font-semibold">{formTexts.street}</div>
+                                <div className="text-xs">{formTexts.city}</div>
+                                <div className="text-xs">{formTexts.country}</div>
                             </div>
                         </div>
                     </div>

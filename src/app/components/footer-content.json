@@ -1,0 +1,24 @@
+{
+  "de": {
+    "company": "Jürgensen & Hillesheim GmbH",
+    "address": ["Bayreuther Straße 44", "40597 Düsseldorf", "Deutschland"],
+    "contact": "Kontakt",
+    "tel": "Tel",
+    "mobile": "Mobil",
+    "email": "E-Mail",
+    "legal": "Rechtliches",
+    "imprint": "Impressum",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "en": {
+    "company": "Jürgensen & Hillesheim Ltd.",
+    "address": ["Bayreuther Straße 44", "40597 Düsseldorf", "Germany"],
+    "contact": "Contact",
+    "tel": "Phone",
+    "mobile": "Mobile",
+    "email": "Email",
+    "legal": "Legal",
+    "imprint": "Imprint",
+    "copyright": "All rights reserved."
+  }
+}

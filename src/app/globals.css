@@ -46,3 +46,13 @@ body {
 .dark .bg-card-contrast {
     background-color: var(--card-contrast);
 }
+
+/* Animationen */
+.animate-fade-in-scale {
+  animation: fadeInScale 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

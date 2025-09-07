@@ -1,0 +1,16 @@
+{
+  "de": {
+    "start": "Start",
+    "about": "Über Uns",
+    "references": "Expertise",
+    "contact": "Kontakt",
+    "langSwitch": "English"
+  },
+  "en": {
+    "start": "Home",
+    "about": "About",
+    "references": "Expertise",
+    "contact": "Contact",
+    "langSwitch": "Deutsch"
+  }
+}

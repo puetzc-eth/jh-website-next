@@ -5,24 +5,7 @@ import { useState, useEffect } from "react";
 import { FaHome, FaAddressBook, FaRegImages, FaMoon, FaSun } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi2";
 import Image from "next/image";
-
-// Übersetzungen für die Navbar
-const navTranslations = {
-    de: {
-        start: "Start",
-        about: "Über Uns",
-        references: "Expertise",
-        contact: "Kontakt",
-        langSwitch: "English",
-    },
-    en: {
-        start: "Home",
-        about: "About",
-        references: "Expertise",
-        contact: "Contact",
-        langSwitch: "Deutsch",
-    }
-};
+import navTranslations from "./header-content.json" assert { type: "json" };
 
 // Sprachumschalter als Switch (ohne Beschriftung an der Seite, Schrift immer dunkel)
 function LanguageSwitch({

@@ -1,0 +1,18 @@
+{
+  "de": {
+    "home": {
+      "title": "Schreinerei Jürgensen & Hillesheim GmbH",
+      "welcome": "Willkommen bei der Schreinerei Jürgensen & Hillesheim GmbH – Ihrem Partner für individuelle Holzarbeiten, Möbel nach Maß und hochwertige Innenausbauten. Entdecken Sie unsere Leidenschaft für das Schreinerhandwerk!",
+      "langSwitch": "English",
+      "heroAlt": "Schreinerei Hintergrund"
+    }
+  },
+  "en": {
+    "home": {
+      "title": "Jürgensen & Hillesheim Carpentry Ltd.",
+      "welcome": "Welcome to Jürgensen & Hillesheim Carpentry Ltd. – your partner for custom woodwork, bespoke furniture, and high-quality interior fittings. Discover our passion for craftsmanship!",
+      "langSwitch": "Deutsch",
+      "heroAlt": "Carpentry background"
+    }
+  }
+}
