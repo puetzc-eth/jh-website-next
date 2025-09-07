@@ -2,7 +2,7 @@
   "de": {
     "heroAlt": "Schreinerei Hintergrund",
     "title": "Über Uns",
-    "text": "Wir sind ein erfahrenes Team aus Schreinermeistern und Gesellen, das seit Jahrzehnten für Qualität, Zuverlässigkeit und kreative Lösungen steht. Unser Anspruch ist es, Ihre Wünsche mit handwerklicher Präzision und moderner Technik zu verwirklichen.",
+    "text": "Unsere Schreinerei wurde 1989 in Düsseldorf-Oberkassel gegründet und steht seitdem für handwerkliche Qualität und Zuverlässigkeit. Um weiter zu wachsen, sind wir vor kurzem nach Düsseldorf-Benrath umgezogen und haben unsere Werkstatt vergrößert. Als Innungsbetrieb, Meisterbetrieb und Ausbildungsbetrieb legen wir großen Wert auf fachliche Kompetenz, Nachwuchsförderung und die Zufriedenheit unserer Kunden.",
     "langSwitch": "English",
     "galleryTitle": "Unser Team",
     "galleryIntro": "Lernen Sie unser engagiertes Team kennen, das mit Leidenschaft und Fachwissen Ihre Projekte realisiert. Jeder Einzelne bringt seine Erfahrung und Kreativität ein, um beste Ergebnisse zu erzielen.",
@@ -25,104 +25,148 @@
     ],
     "images": [
       {
-        "src": "/about1.jpg",
+        "src": "/team1.jpg",
         "title": "Martin Pütz",
-        "desc": "Maßgefertigte Lösungen für Wohn- und Arbeitsräume."
+        "desc": "Martin Pütz ist seit über 30 Jahren als Schreinermeister tätig und leitet unser Team als Geschäftsführer mit Tobias Hillesheim mit viel Erfahrung und Fachwissen."
       },
       {
-        "src": "/about2.jpg",
+        "src": "/team2.jpg",
         "title": "Tobias Hillesheim",
-        "desc": "Individuelle Möbelstücke nach Ihren Vorstellungen."
+        "desc": "Tobias Hillesheim ist seit 7 Jahren Schreinermeister und leitet mit Martin Pütz das Team."
       },
       {
-        "src": "/about3.jpg",
+        "src": "/team3.jpg",
         "title": "Klaus Hillesheim",
-        "desc": "Moderne und funktionale Küchen aus Meisterhand."
+        "desc": "Klaus Hillesheim übergab 2023 die Geschäftsführung an seinen Sohn Tobias Hillesheim und unterstützt das Team mit seiner langjährigen Erfahrung."
       },
       {
-        "src": "/about4.jpg",
+        "src": "/team4.jpg",
         "title": "Joachim Aigner",
-        "desc": "Stilvolle und sichere Treppen für Ihr Zuhause."
+        "desc": "Joachim Aigner ist seit über 30 Jahren ein erfahrener Schreiner und bringt sein handwerkliches Können in jedes Projekt ein."
       },
       {
-        "src": "/about5.jpg",
+        "src": "/team5.jpg",
         "title": "Josef Pütz",
-        "desc": "Hochwertige Türen und Fenster aus eigener Fertigung."
+        "desc": "Josef Pütz ist seit über 20 Jahren ein erfahrenes Mitglied unseres Teams und sorgt für präzise und hochwertige Arbeit."
       },
       {
-        "src": "/about6.jpg",
+        "src": "/team6.jpg",
         "title": "Emil Steller",
-        "desc": "Elegante Badmöbel für Ihr Wohlfühlbad."
+        "desc": "Emil Steller ist seit diesem Jahr als Auszubildender Teil unseres Teams und lernt das Handwerk von Grund auf."
       },
       {
-        "src": "/about7.jpg",
+        "src": "/team7.jpg",
         "title": "Jakob Hölzel",
-        "desc": "Langlebige und schöne Holzfußböden."
+        "desc": "Jakob Hölzel ist seit diesem Jahr Geselle in unserem Team und bringt frischen Wind und neue Ideen mit."
       }
     ],
+    "partners": [
+      {
+        "src": "/partner1.png",
+        "alt": "Partner 1",
+        "name": "Furnierholz",
+        "url": "https://www.furnierholz.net/"
+      },
+      {
+        "src": "/partner2.png",
+        "alt": "Partner 2",
+        "name": "Steinrück",
+        "url": "https://www.steinrueck.de/"
+      },
+      {
+        "src": "/partner3.jpg",
+        "alt": "Partner 3",
+        "name": "Würth",
+        "url": "https://www.wuerth.com/"
+      }
+    ],
+    "partnersTitle": "Unsere Partner",
+    "partnersText": "Wir legen großen Wert auf die Zusammenarbeit mit zuverlässigen, lokalen Partnern und mittelständischen Unternehmen aus der Region. So können wir höchste Qualität, kurze Wege und nachhaltige Lösungen für unsere Kunden garantieren.",
     "close": "Schließen"
   },
   "en": {
     "heroAlt": "Carpentry background",
     "title": "About Us",
-    "text": "We are an experienced team of master carpenters and journeymen, standing for quality, reliability, and creative solutions for decades. Our aim is to realize your wishes with craftsmanship precision and modern technology.",
+    "text": "Our carpentry was founded in 1989 in Düsseldorf-Oberkassel and has stood for craftsmanship and reliability ever since. To continue growing, we recently moved to Düsseldorf-Benrath and expanded our workshop. As a member of the guild, a master craftsman’s business, and a training company, we place great value on expertise, supporting young talent, and customer satisfaction.",
     "langSwitch": "Deutsch",
-    "galleryTitle": "Insights into our Work",
-    "galleryIntro": "Get to know our dedicated team, who realize your projects with passion and expertise. Each member contributes their experience and creativity to achieve the best results.",
+    "galleryTitle": "Our Team",
+    "galleryIntro": "Get to know our dedicated team, who realize your projects with passion and expertise. Each individual brings their experience and creativity to achieve the best results.",
     "slideshow": [
       {
         "src": "/about1.jpg",
         "alt": "Interior Construction",
-        "desc": "Custom solutions for living and working spaces."
+        "desc": "Custom-made solutions for living and working spaces."
       },
       {
         "src": "/about2.jpg",
         "alt": "Furniture Design",
-        "desc": "Individual pieces of furniture made to your wishes."
+        "desc": "Individual pieces of furniture made to your specifications."
       },
       {
         "src": "/about3.jpg",
         "alt": "Kitchen Construction",
-        "desc": "Modern and functional kitchens from master craftsmen."
+        "desc": "Modern and functional kitchens crafted by masters."
       }
     ],
     "images": [
       {
-        "src": "/about1.jpg",
-        "title": "Interior Construction",
-        "desc": "Custom solutions for living and working spaces."
+        "src": "/team1.jpg",
+        "title": "Martin Pütz",
+        "desc": "Martin Pütz has been a master carpenter for over 30 years and leads our team as managing director together with Tobias Hillesheim, bringing a wealth of experience and expertise."
       },
       {
-        "src": "/about2.jpg",
-        "title": "Furniture Design",
-        "desc": "Individual pieces of furniture made to your wishes."
+        "src": "/team2.jpg",
+        "title": "Tobias Hillesheim",
+        "desc": "Tobias Hillesheim has been a master carpenter for 7 years and leads the team together with Martin Pütz."
       },
       {
-        "src": "/about3.jpg",
-        "title": "Kitchen Construction",
-        "desc": "Modern and functional kitchens from master craftsmen."
+        "src": "/team3.jpg",
+        "title": "Klaus Hillesheim",
+        "desc": "Klaus Hillesheim handed over management to his son Tobias Hillesheim in 2023 and supports the team with his many years of experience."
       },
       {
-        "src": "/about4.jpg",
-        "title": "Staircase Construction",
-        "desc": "Stylish and safe staircases for your home."
+        "src": "/team4.jpg",
+        "title": "Joachim Aigner",
+        "desc": "Joachim Aigner has been an experienced carpenter for over 30 years and brings his craftsmanship to every project."
       },
       {
-        "src": "/about5.jpg",
-        "title": "Doors & Windows",
-        "desc": "High-quality doors and windows from our own production."
+        "src": "/team5.jpg",
+        "title": "Josef Pütz",
+        "desc": "Josef Pütz has been an experienced member of our team for over 20 years and ensures precise and high-quality work."
       },
       {
-        "src": "/about6.jpg",
-        "title": "Bathroom Furniture",
-        "desc": "Elegant bathroom furniture for your dream bathroom."
+        "src": "/team6.jpg",
+        "title": "Emil Steller",
+        "desc": "Emil Steller joined our team as an apprentice this year and is learning the trade from the ground up."
       },
       {
-        "src": "/about7.jpg",
-        "title": "Flooring",
-        "desc": "Durable and beautiful wooden floors."
+        "src": "/team7.jpg",
+        "title": "Jakob Hölzel",
+        "desc": "Jakob Hölzel became a journeyman in our team this year and brings fresh ideas and new energy."
       }
     ],
+    "partners": [
+      {
+        "src": "/partner1.png",
+        "alt": "Partner 1",
+        "name": "Furnierholz",
+        "url": "https://www.furnierholz.net/"
+      },
+      {
+        "src": "/partner2.png",
+        "alt": "Partner 2",
+        "name": "Steinrück",
+        "url": "https://www.steinrueck.de/"
+      },
+      {
+        "src": "/partner3.jpg",
+        "alt": "Partner 3",
+        "name": "Würth",
+        "url": "https://www.wuerth.com/"
+      }
+    ],
+    "partnersTitle": "Our Partners",
+    "partnersText": "We place great value on working with reliable local partners and medium-sized companies from the region. This enables us to guarantee the highest quality, short distances, and sustainable solutions for our customers.",
     "close": "Close"
   }
 }

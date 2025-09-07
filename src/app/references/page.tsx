@@ -24,6 +24,23 @@ function useInView<T extends HTMLElement = HTMLDivElement>(threshold = 0.2) {
     return [ref, inView] as const;
 }
 
+// Hook für animierte Linien neben Überschriften (wie bei About)
+function useLineInView<T extends HTMLElement = HTMLElement>(threshold = 0.15) {
+    const ref = useRef<T | null>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        if (!ref.current) return;
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setVisible(entry.isIntersecting),
+            { threshold }
+        );
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
+    return [ref, visible] as const;
+}
+
 export default function References() {
     const [lang, setLang] = useState<"de" | "en">("de");
     const t = content[lang];
@@ -31,6 +48,9 @@ export default function References() {
 
     const [modalIdx, setModalIdx] = useState<number | null>(null);
     const [slideIdx, setSlideIdx] = useState(0);
+
+    // Linien-Animation für Überschrift
+    const [lineRef, lineVisible] = useLineInView<HTMLDivElement>();
 
     // Beim Öffnen Modal immer auf Slide 0
     useEffect(() => {
@@ -60,8 +80,16 @@ export default function References() {
                     />
                     <div className="absolute inset-0 bg-black/40 z-10" />
                 </section>
-                <div className="max-w-4xl mx-auto p-6">                    
-                    <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
+                <div className="max-w-4xl mx-auto p-6">
+                    {/* Überschrift mit animierter Linie */}
+                    <div className="flex items-center mb-4" ref={lineRef}>
+                        <h2 className="text-2xl font-bold">{t.title}</h2>
+                        <div
+                            className={`flex-1 h-px bg-gray-300 ml-4 transition-all duration-[1600ms] ease-out origin-left
+                                ${lineVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}
+                            `}
+                        />
+                    </div>
                     <p className="mb-4 text-justify">
                         {t.text}
                     </p>
