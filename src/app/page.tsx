@@ -21,7 +21,7 @@ export default function Home() {
                     className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center mb-8"
                 >
                     <Image
-                        src="/about2.webp"
+                        src="/referenz1b.jpg"
                         alt={t.heroAlt}
                         fill
                         style={{ objectFit: 'cover' }}
