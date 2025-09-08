@@ -102,12 +102,12 @@ export default function Header({
     setLang?: (l: "de" | "en") => void;
 }) {
     const [open, setOpen] = useState(false);
-    const [mobileOpen, setMobileOpen] = useState(false); // 1. Burger-Menü-Status
+    const [mobileOpen, setMobileOpen] = useState(false);
     const t = navTranslations[lang];
 
     return (
         <>
-            {/* 2. Burger-Button nur auf Mobil */}
+            {/* Burger-Button nur auf Mobil */}
             <button
                 className="fixed top-4 left-4 z-50 md:hidden bg-white rounded p-2 shadow"
                 aria-label="Menü öffnen"
@@ -118,38 +118,70 @@ export default function Header({
                 <span className="block w-6 h-0.5 bg-black"></span>
             </button>
 
-            {/* 3. Mobile Menü Overlay */}
+            {/* Mobile Menü Overlay */}
             {mobileOpen && (
-                <div className="fixed inset-0 z-50 bg-black/60 flex md:hidden">
-                    <nav className="bg-white w-64 h-full p-6 flex flex-col">
+                <div className="fixed inset-0 z-50 flex md:hidden">
+                    {/* Overlay-Hintergrund */}
+                    <div
+                        className="absolute inset-0 bg-black/60"
+                        onClick={() => setMobileOpen(false)}
+                    />
+                    {/* Menü selbst: immer hell, unabhängig vom Darkmode */}
+                    <nav className="relative bg-white w-64 h-full p-6 flex flex-col z-10 shadow-lg">
+                        {/* Schließen-Button ganz oben rechts */}
                         <button
-                            className="self-end mb-8 text-2xl"
+                            className="absolute top-4 right-4 text-2xl text-black"
                             aria-label="Menü schließen"
                             onClick={() => setMobileOpen(false)}
                         >
                             &times;
                         </button>
-                        <Link href="/" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2">
-                            <FaHome /> {t.start}
-                        </Link>
-                        <Link href="/about" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2">
-                            <HiUserGroup /> {t.about}
-                        </Link>
-                        <Link href="/references" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2">
-                            <FaRegImages /> {t.references}
-                        </Link>
-                        <Link href="/contact" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2">
-                            <FaAddressBook /> {t.contact}
-                        </Link>
-                        {setLang && <LanguageSwitch lang={lang} setLang={setLang} open={true} />}
-                        <ThemeToggle />
+                        {/* Logo und Beschriftung wie im Desktop-Menü */}
+                        <div className="flex flex-col items-center justify-center w-full mb-8 mt-8">
+                            <Link href="/" className="relative flex flex-col items-center w-full focus:outline-none" aria-label="Zur Startseite" onClick={() => setMobileOpen(false)}>
+                                <div className="w-16 h-16 mb-2 relative">
+                                    <Image
+                                        src="/logo_png.png"
+                                        alt="Firmenlogo"
+                                        fill
+                                        style={{ objectFit: "contain" }}
+                                        priority
+                                    />
+                                </div>
+                                <span
+                                    className="mt-2 text-base font-semibold text-gray-800 text-center leading-tight"
+                                    style={{ whiteSpace: "pre-line" }}
+                                >
+                                    Jürgensen &amp;
+                                    {"\n"}
+                                    Hillesheim
+                                </span>
+                            </Link>
+                        </div>
+                        <div className="flex-1 flex flex-col">
+                            <Link href="/" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2 text-black">
+                                <FaHome /> {t.start}
+                            </Link>
+                            <Link href="/about" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2 text-black">
+                                <HiUserGroup /> {t.about}
+                            </Link>
+                            <Link href="/references" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2 text-black">
+                                <FaRegImages /> {t.references}
+                            </Link>
+                            <Link href="/contact" onClick={() => setMobileOpen(false)} className="mb-6 font-bold text-lg flex items-center gap-2 text-black">
+                                <FaAddressBook /> {t.contact}
+                            </Link>
+                        </div>
+                        {/* Sprach- und Theme-Switcher unten nebeneinander */}
+                        <div className="mt-auto flex flex-row gap-2 justify-center items-center w-full pb-2">
+                            {setLang && <LanguageSwitch lang={lang} setLang={setLang} open={true} />}
+                            <ThemeToggle />
+                        </div>
                     </nav>
-                    {/* Klick auf Overlay schließt Menü */}
-                    <div className="flex-1" onClick={() => setMobileOpen(false)} />
                 </div>
             )}
 
-            {/* 4. Sidebar nur auf Desktop */}
+            {/* Sidebar nur auf Desktop */}
             <aside
                 className={`fixed top-0 left-0 h-full z-50 flex flex-col bg-gray-100 border-r border-gray-200 transition-all duration-700 ${
                     open ? "w-64" : "w-20"
