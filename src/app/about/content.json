@@ -8,17 +8,17 @@
     "galleryIntro": "Lernen Sie unser engagiertes Team kennen, das mit Leidenschaft und Fachwissen Ihre Projekte realisiert. Jeder Einzelne bringt seine Erfahrung und Kreativität ein, um beste Ergebnisse zu erzielen.",
     "slideshow": [
       {
-        "src": "/about1.jpg",
+        "src": "/about1.JPG",
         "alt": "Innenausbau",
         "desc": "Maßgefertigte Lösungen für Wohn- und Arbeitsräume."
       },
       {
-        "src": "/about2.jpg",
+        "src": "/about2.JPG",
         "alt": "Möbeldesign",
         "desc": "Individuelle Möbelstücke nach Ihren Vorstellungen."
       },
       {
-        "src": "/about3.jpg",
+        "src": "/about3.JPG",
         "alt": "Küchenbau",
         "desc": "Moderne und funktionale Küchen aus Meisterhand."
       }
@@ -93,17 +93,17 @@
     "galleryIntro": "Get to know our dedicated team, who realize your projects with passion and expertise. Each individual brings their experience and creativity to achieve the best results.",
     "slideshow": [
       {
-        "src": "/about1.jpg",
+        "src": "/about1.JPG",
         "alt": "Interior Construction",
         "desc": "Custom-made solutions for living and working spaces."
       },
       {
-        "src": "/about2.jpg",
+        "src": "/about2.JPG",
         "alt": "Furniture Design",
         "desc": "Individual pieces of furniture made to your specifications."
       },
       {
-        "src": "/about3.jpg",
+        "src": "/about3.JPG",
         "alt": "Kitchen Construction",
         "desc": "Modern and functional kitchens crafted by masters."
       }

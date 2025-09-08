@@ -104,7 +104,7 @@ export default function About() {
                     style={{ maxWidth: "100vw" }}
                 >
                     <Image
-                        src="/start.jpg"
+                        src="/start.JPG"
                         alt={t.heroAlt}
                         fill
                         style={{ objectFit: 'cover' }}
