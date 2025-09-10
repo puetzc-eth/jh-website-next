@@ -11,17 +11,20 @@
       [
         { "src": "/referenz1.jpg", "text": "Innenausbau und Möbeldesign", "desc": "Maßgefertigte Schreibtischlösungen und Büroeinrichtungen. Dazu gehören auch individuelle Regalsysteme und Sideboards." },
         { "src": "/referenz1b.jpg", "text": "Innenausbau und Möbeldesign", "desc": "Innenausbau von Restaurants und Einzelhandel. Dazu gehören auch Raumtrennsysteme und Theken." },
-        { "src": "/referenz1c.JPG", "text": "Innenausbau und Möbeldesign", "desc": "Qualitativ hochwertige und individuelle Fußleisten, die zu jedem Zimmer passen." }
+        { "src": "/referenz1c.JPG", "text": "Innenausbau und Möbeldesign", "desc": "Qualitativ hochwertige und individuelle Fußleisten, die zu jedem Zimmer passen." },
+        { "src": "/referenz1d.jpg", "text": "Innenausbau und Möbeldesign", "desc": "Individuelle Schreibtischlösungen in Dachschrägen mit hochwertigen Materialien." },
+        { "src": "/referenz1e.JPG", "text": "Innenausbau und Möbeldesign", "desc": "Aussagekräftige Möbel für Empfangsbereiche." }
       ],
       [
         { "src": "/referenz2.jpg", "text": "Treppenbau", "desc": "Stilvolle und stabile Holztreppen für jedes Zuhause." },
         { "src": "/referenz2b.jpg", "text": "Treppenbau", "desc": "Jede Treppe ein Unikat – individuell geplant und gefertigt." },
-        { "src": "/referenz2c.jpg", "text": "Treppenbau", "desc": "Sicheres und elegantes Geländer aus Massivholz." }
+        { "src": "/referenz2c.jpg", "text": "Treppenbau", "desc": "Abschlussmöbel für Treppenhäuser mit Schiebetüren." },
+        { "src": "/referenz2d.jpg", "text": "Treppenbau", "desc": "Sichere und elegante Geländer aus Massivholz." }
       ],
       [
-        { "src": "/referenz3.JPG", "text": "Fenster und Türen", "desc": "Individuelle Fenster und Türen für mehr Licht in Ihrem Zuhause. Einbruchsicherheit und Wärmedämmung haben bei uns oberste Priorität." },
-        { "src": "/referenz3.JPG", "text": "Fenster und Türen", "desc": "Individuelle Fenster und Türen für mehr Licht in Ihrem Zuhause. Einbruchsicherheit und Wärmedämmung haben bei uns oberste Priorität." },
-        { "src": "/referenz3.JPG", "text": "Fenster und Türen", "desc": "Individuelle Fenster und Türen für mehr Licht in Ihrem Zuhause. Einbruchsicherheit und Wärmedämmung haben bei uns oberste Priorität." }
+        { "src": "/referenz3.JPG", "text": "Fenster und Türen", "desc": "Hochwertige Türenanlagen für Mehrfamilienhäuser mit Briefkastenanlagen." },
+        { "src": "/referenz3b.jpg", "text": "Fenster und Türen", "desc": "Hochwertige Holzinnentüren im Altbau." },
+        { "src": "/referenz3c.jpg", "text": "Fenster und Türen", "desc": "Hochwertige Holzinnentüren im Altbau." }
       ],
       [
         { "src": "/referenz4.jpg", "text": "Messebau", "desc": "Individuelle Messestände für einen eindrucksvollen Auftritt." },
@@ -29,24 +32,19 @@
         { "src": "/referenz4c.JPG", "text": "Messebau", "desc": "Detailaufnahme eines Messestands mit hochwertigen Materialien." }
       ],
       [
-        { "src": "/referenz4c.JPG", "text": "Reparaturen und Restaurationen", "desc": "Fachgerechte Reparaturen und liebevolle Restaurationen." },
-        { "src": "/referenz4c.JPG", "text": "Reparaturen und Restaurationen", "desc": "Ein altes Möbelstück in neuem Glanz." },
-        { "src": "/referenz4c.JPG", "text": "Reparaturen und Restaurationen", "desc": "Einbruchsschäden professionell behoben." }
-      ],
-      [
         { "src": "/referenz6.jpg", "text": "Fußböden", "desc": "Hochwertige Holzfußböden für ein warmes Wohngefühl." },
         { "src": "/referenz6b.jpg", "text": "Fußböden", "desc": "Präzise Verlegung von Parkettböden." },
-        { "src": "/referenz6c.jpg", "text": "Fußböden", "desc": "Detailansicht eines edlen Holzfußbodens." }
-      ],
-      [
-        { "src": "/referenz6c.jpg", "text": "Badmöbel", "desc": "Individuelle Badmöbel für Ihr Traumbad." },
-        { "src": "/referenz6c.jpg", "text": "Badmöbel", "desc": "Moderner Waschtisch mit Spiegelschrank." },
-        { "src": "/referenz6c.jpg", "text": "Badmöbel", "desc": "Praktischer Spiegelschrank mit viel Stauraum." }
+        { "src": "/referenz6c.jpg", "text": "Fußböden", "desc": "Detailansicht eines edlen Holzfußbodens." },
+        { "src": "/referenz6d.jpg", "text": "Fußböden", "desc": "Detailansicht eines edlen Holzfußbodens." },
+        { "src": "/referenz6e.jpg", "text": "Fußböden", "desc": "Detailansicht eines edlen Holzfußbodens." }
       ],
       [
         { "src": "/referenz8.jpg", "text": "Schränke", "desc": "Maßgefertigte Schränke für jeden Raum." },
-        { "src": "/referenz8b.jpg", "text": "Schränke", "desc": "Einbauschrank mit optimaler Raumnutzung." },
-        { "src": "/referenz8c.jpg", "text": "Schränke", "desc": "Schränke mit eleganter Verkleidung und intelligenter Innenaufteilung." }
+        { "src": "/referenz8b.JPG", "text": "Schränke", "desc": "Einbauschrank mit optimaler Raumnutzung." },
+        { "src": "/referenz8c.JPG", "text": "Schränke", "desc": "Schränke mit eleganter Verkleidung und intelligenter Innenaufteilung." },
+        { "src": "/referenz8d.jpg", "text": "Schränke", "desc": "Begehbarer Schrank mit Schiebetüren" },
+        { "src": "/referenz8e.JPG", "text": "Schränke", "desc": "Schranktüren mit Profilierung in Strichlack." },
+        { "src": "/referenz8f.JPG", "text": "Schränke", "desc": "Echtholz furnierte Schrankanlagen." }
       ]
     ]
   },
@@ -62,42 +60,40 @@
       [
         { "src": "/referenz1.jpg", "text": "Interior Construction and Furniture Design", "desc": "Custom-made desk solutions and office furnishings. This also includes individual shelving systems and sideboards." },
         { "src": "/referenz1b.jpg", "text": "Interior Construction and Furniture Design", "desc": "Interior construction for restaurants and retail. This also includes room divider systems and counters." },
-        { "src": "/referenz1c.JPG", "text": "Interior Construction and Furniture Design", "desc": "High-quality and custom skirting boards that fit every room." }
+        { "src": "/referenz1c.JPG", "text": "Interior Construction and Furniture Design", "desc": "High-quality and custom skirting boards that fit every room." },
+        { "src": "/referenz1d.jpg", "text": "Interior Construction and Furniture Design", "desc": "Custom desk solutions for sloped ceilings with high-quality materials." },
+        { "src": "/referenz1e.JPG", "text": "Interior Construction and Furniture Design", "desc": "Striking furniture for reception areas." }
       ],
       [
         { "src": "/referenz2.jpg", "text": "Staircase Construction", "desc": "Stylish and sturdy wooden staircases for every home." },
         { "src": "/referenz2b.jpg", "text": "Staircase Construction", "desc": "Each staircase is unique – individually planned and crafted." },
-        { "src": "/referenz2c.jpg", "text": "Staircase Construction", "desc": "Safe and elegant railing made of solid wood." }
+        { "src": "/referenz2c.jpg", "text": "Staircase Construction", "desc": "Finishing furniture for stairwells with sliding doors." },
+        { "src": "/referenz2d.jpg", "text": "Staircase Construction", "desc": "Safe and elegant railings made of solid wood." }
       ],
       [
-        { "src": "/referenz3.JPG", "text": "Windows and Doors", "desc": "Custom windows and doors for more light in your home. Burglary protection and thermal insulation are our top priorities." },
-        { "src": "/referenz3.JPG", "text": "Windows and Doors", "desc": "Custom windows and doors for more light in your home. Burglary protection and thermal insulation are our top priorities." },
-        { "src": "/referenz3.JPG", "text": "Windows and Doors", "desc": "Custom windows and doors for more light in your home. Burglary protection and thermal insulation are our top priorities." }
+        { "src": "/referenz3.JPG", "text": "Windows and Doors", "desc": "High-quality door systems for apartment buildings with mailbox systems." },
+        { "src": "/referenz3b.jpg", "text": "Windows and Doors", "desc": "High-quality interior wooden doors in old buildings." },
+        { "src": "/referenz3c.jpg", "text": "Windows and Doors", "desc": "High-quality interior wooden doors in old buildings." }
       ],
       [
         { "src": "/referenz4.jpg", "text": "Exhibition Stand Construction", "desc": "Custom exhibition stands for an impressive appearance." },
-        { "src": "/referenz4b.jpg", "text": "Exhibition Stand Construction", "desc": "Setup phase of an exhibition stand with our team." },
+        { "src": "/referenz4b.JPG", "text": "Exhibition Stand Construction", "desc": "Setup phase of an exhibition stand with our team." },
         { "src": "/referenz4c.JPG", "text": "Exhibition Stand Construction", "desc": "Detail view of an exhibition stand with high-quality materials." }
-      ],
-      [
-        { "src": "/referenz4c.JPG", "text": "Repairs and Restorations", "desc": "Professional repairs and loving restorations." },
-        { "src": "/referenz4c.JPG", "text": "Repairs and Restorations", "desc": "An old piece of furniture in new splendor." },
-        { "src": "/referenz4c.JPG", "text": "Repairs and Restorations", "desc": "Burglary damage professionally repaired." }
       ],
       [
         { "src": "/referenz6.jpg", "text": "Flooring", "desc": "High-quality wooden floors for a warm living atmosphere." },
         { "src": "/referenz6b.jpg", "text": "Flooring", "desc": "Precise installation of parquet floors." },
-        { "src": "/referenz6c.jpg", "text": "Flooring", "desc": "Detail view of a fine wooden floor." }
-      ],
-      [
-        { "src": "/referenz6c.jpg", "text": "Bathroom Furniture", "desc": "Custom bathroom furniture for your dream bathroom." },
-        { "src": "/referenz6c.jpg", "text": "Bathroom Furniture", "desc": "Modern washstand with mirror cabinet." },
-        { "src": "/referenz6c.jpg", "text": "Bathroom Furniture", "desc": "Practical mirror cabinet with plenty of storage space." }
+        { "src": "/referenz6c.jpg", "text": "Flooring", "desc": "Detail view of a fine wooden floor." },
+        { "src": "/referenz6d.jpg", "text": "Flooring", "desc": "Detail view of a fine wooden floor." },
+        { "src": "/referenz6e.jpg", "text": "Flooring", "desc": "Detail view of a fine wooden floor." }
       ],
       [
         { "src": "/referenz8.jpg", "text": "Cabinets", "desc": "Custom-made cabinets for every room." },
-        { "src": "/referenz8b.jpg", "text": "Cabinets", "desc": "Built-in cabinet with optimal use of space." },
-        { "src": "/referenz8c.jpg", "text": "Cabinets", "desc": "Cabinets with elegant cladding and intelligent interior layout." }
+        { "src": "/referenz8b.JPG", "text": "Cabinets", "desc": "Built-in cabinet with optimal use of space." },
+        { "src": "/referenz8c.JPG", "text": "Cabinets", "desc": "Cabinets with elegant cladding and intelligent interior layout." },
+        { "src": "/referenz8d.jpg", "text": "Cabinets", "desc": "Walk-in closet with sliding doors." },
+        { "src": "/referenz8e.JPG", "text": "Cabinets", "desc": "Cabinet doors with profiled lacquer finish." },
+        { "src": "/referenz8f.JPG", "text": "Cabinets", "desc": "Real wood veneered cabinet systems." }
       ]
     ]
   }

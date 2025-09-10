@@ -154,7 +154,7 @@ export default function Header({
                                 >
                                     Jürgensen &amp;
                                     {"\n"}
-                                    Hillesheim
+                                    Hillesheim GmbH
                                 </span>
                             </Link>
                         </div>
@@ -208,7 +208,7 @@ export default function Header({
                         >
                             Jürgensen &amp;
                             {"\n"}
-                            Hillesheim
+                            Hillesheim GmbH
                         </span>
                     </Link>
                 </div>
